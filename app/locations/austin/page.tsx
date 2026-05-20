@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { practiceAreas } from "@/lib/practice-areas";
 
 export const metadata: Metadata = {
@@ -18,8 +19,18 @@ export const metadata: Metadata = {
 export default function AustinPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-brand-charcoal border-b border-brand-cream/10 py-24">
+      {/* Hero with aerial photo */}
+      <section className="relative bg-brand-black border-b border-brand-cream/10 py-32 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/austin-aerial.jpg"
+            alt="Aerial view of Austin Texas"
+            fill
+            className="object-cover object-center opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/60" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">
             Serving Austin, Texas
@@ -40,6 +51,50 @@ export default function AustinPage() {
             >
               Free Austin Consultation
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <section className="bg-brand-black py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="relative h-64 overflow-hidden">
+              <Image
+                src="/images/austin-skyline.jpg"
+                alt="Austin Texas skyline along Lady Bird Lake"
+                fill
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-brand-black/20" />
+              <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">
+                Austin Skyline
+              </span>
+            </div>
+            <div className="relative h-64 overflow-hidden">
+              <Image
+                src="/images/austin-aerial.jpg"
+                alt="Drone aerial view of Austin Texas"
+                fill
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-brand-black/20" />
+              <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">
+                Aerial View
+              </span>
+            </div>
+            <div className="relative h-64 overflow-hidden">
+              <Image
+                src="/images/austin-360bridge.jpg"
+                alt="360 Bridge over Lake Austin"
+                fill
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-brand-black/20" />
+              <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">
+                360 Bridge
+              </span>
+            </div>
           </div>
         </div>
       </section>

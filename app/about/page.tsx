@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Attorney Joseph Barrientos | Austin Personal Injury Lawyer",
@@ -106,6 +107,22 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* City photo banner */}
+      <section className="relative h-64 overflow-hidden">
+        <Image
+          src="/images/austin-bridge.jpg"
+          alt="Austin Texas bridge and skyline"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-brand-black/60" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-brand-cream font-serif text-2xl font-bold tracking-widest italic text-center px-4">
+            "Committed. Relentless. Strategic."
+          </p>
         </div>
       </section>
 

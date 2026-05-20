@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { practiceAreas } from "@/lib/practice-areas";
 
 export const metadata: Metadata = {
@@ -39,6 +40,17 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center bg-brand-black overflow-hidden">
+        {/* Aerial Austin background */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/austin-aerial.jpg"
+            alt="Aerial view of Austin, Texas"
+            fill
+            className="object-cover object-center opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/50" />
+        </div>
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-gold hidden lg:block" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
@@ -76,7 +88,6 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <div className="absolute inset-0 -z-10 opacity-5 bg-[radial-gradient(ellipse_at_top_right,_#C8A84B,_transparent_60%)]" />
       </section>
 
       {/* Trust bar */}
@@ -192,39 +203,43 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Link
               href="/locations/austin"
-              className="group bg-brand-charcoal border border-brand-cream/10 hover:border-brand-gold/50 p-12 text-center transition-all duration-300"
+              className="group relative overflow-hidden border border-brand-cream/10 hover:border-brand-gold/50 p-12 text-center transition-all duration-300 min-h-[320px] flex flex-col justify-end"
             >
-              <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">
-                Primary Office
-              </p>
-              <h3 className="text-brand-cream text-3xl font-serif font-bold mb-4 group-hover:text-brand-gold transition-colors">
-                Austin, TX
-              </h3>
-              <p className="text-brand-gray text-sm leading-relaxed mb-6">
-                Our home base. We know Austin roads, courts, and insurance
-                adjusters better than anyone.
-              </p>
-              <span className="text-brand-gold text-xs uppercase tracking-widest">
-                Austin Injury Claims →
-              </span>
+              <Image
+                src="/images/austin-skyline.jpg"
+                alt="Austin Texas skyline"
+                fill
+                className="object-cover object-center opacity-40 group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105 scale-100 transition-transform"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent" />
+              <div className="relative z-10">
+                <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">Primary Office</p>
+                <h3 className="text-brand-cream text-3xl font-serif font-bold mb-4">Austin, TX</h3>
+                <p className="text-brand-gray text-sm leading-relaxed mb-6">
+                  Our home base. We know Austin roads, courts, and insurance adjusters better than anyone.
+                </p>
+                <span className="text-brand-gold text-xs uppercase tracking-widest">Austin Injury Claims →</span>
+              </div>
             </Link>
             <Link
               href="/locations/san-antonio"
-              className="group bg-brand-charcoal border border-brand-cream/10 hover:border-brand-gold/50 p-12 text-center transition-all duration-300"
+              className="group relative overflow-hidden border border-brand-cream/10 hover:border-brand-gold/50 p-12 text-center transition-all duration-300 min-h-[320px] flex flex-col justify-end"
             >
-              <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">
-                Also Serving
-              </p>
-              <h3 className="text-brand-cream text-3xl font-serif font-bold mb-4 group-hover:text-brand-gold transition-colors">
-                San Antonio, TX
-              </h3>
-              <p className="text-brand-gray text-sm leading-relaxed mb-6">
-                Trafalgar Law is proud to extend our relentless representation
-                to injury victims across San Antonio.
-              </p>
-              <span className="text-brand-gold text-xs uppercase tracking-widest">
-                San Antonio Injury Claims →
-              </span>
+              <Image
+                src="/images/austin-360bridge.jpg"
+                alt="Austin Texas 360 bridge"
+                fill
+                className="object-cover object-center opacity-40 group-hover:opacity-50 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent" />
+              <div className="relative z-10">
+                <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">Also Serving</p>
+                <h3 className="text-brand-cream text-3xl font-serif font-bold mb-4">San Antonio, TX</h3>
+                <p className="text-brand-gray text-sm leading-relaxed mb-6">
+                  Trafalgar Law is proud to extend our relentless representation to injury victims across San Antonio.
+                </p>
+                <span className="text-brand-gold text-xs uppercase tracking-widest">San Antonio Injury Claims →</span>
+              </div>
             </Link>
           </div>
         </div>
