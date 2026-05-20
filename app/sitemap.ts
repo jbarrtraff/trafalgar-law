@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, priority: 1.0, changeFrequency: "weekly" as const },
     { url: `${BASE}/about`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${BASE}/practice-areas`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${BASE}/results`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${BASE}/locations/austin`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE}/locations/san-antonio`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE}/locations/round-rock`, priority: 0.8, changeFrequency: "monthly" as const },
