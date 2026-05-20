@@ -3,6 +3,8 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import MobileCallBar from "@/components/MobileCallBar";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -112,9 +114,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-brand-black text-brand-cream antialiased">
+        <AnnouncementBar />
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
+        <MobileCallBar />
       </body>
     </html>
   );

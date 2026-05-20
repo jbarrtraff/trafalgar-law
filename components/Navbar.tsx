@@ -44,8 +44,14 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* Phone + CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="tel:+17372912767"
+              className="text-brand-gold font-bold text-sm tracking-wide hover:text-brand-gold-light transition-colors"
+            >
+              (737) 291-2767
+            </a>
             <Link
               href="/contact"
               className="bg-brand-gold hover:bg-brand-gold-light text-brand-black font-bold text-sm px-6 py-3 uppercase tracking-widest transition-colors duration-200"

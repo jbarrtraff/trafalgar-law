@@ -27,8 +27,22 @@ export default async function PracticeAreaPage({ params }: Props) {
 
   const others = practiceAreas.filter((a) => a.slug !== slug).slice(0, 3);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: area.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="bg-brand-charcoal border-b border-brand-cream/10 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,6 +102,26 @@ export default async function PracticeAreaPage({ params }: Props) {
                   Trafalgar Law represents clients throughout Central and South Texas.
                   Contact us no matter where your accident occurred.
                 </p>
+              </div>
+
+              {/* FAQ */}
+              <div className="mt-12">
+                <h2 className="text-brand-cream font-serif text-3xl font-bold mb-8">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-4">
+                  {area.faqs.map((faq, i) => (
+                    <details key={i} className="group bg-brand-charcoal border border-brand-cream/10 open:border-brand-gold/40">
+                      <summary className="flex justify-between items-center cursor-pointer px-6 py-5 text-brand-cream font-semibold list-none">
+                        <span>{faq.q}</span>
+                        <span className="text-brand-gold text-xl group-open:rotate-45 transition-transform duration-200 shrink-0 ml-4">+</span>
+                      </summary>
+                      <p className="px-6 pb-5 text-brand-cream/70 leading-relaxed text-sm border-t border-brand-cream/10 pt-4">
+                        {faq.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
               </div>
             </div>
 
