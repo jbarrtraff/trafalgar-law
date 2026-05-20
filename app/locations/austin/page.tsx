@@ -140,10 +140,10 @@ export default function AustinPage() {
               Free Consultation
             </Link>
             <a
-              href="tel:+15125550100"
+              href="tel:+17372912767"
               className="border-2 border-brand-black text-brand-black font-bold text-sm px-10 py-4 uppercase tracking-widest hover:bg-brand-black hover:text-brand-cream transition-colors"
             >
-              Call (512) 555-0100
+              Call (737) 291-2767
             </a>
           </div>
         </div>

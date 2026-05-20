@@ -76,10 +76,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-brand-gray">
               <li>
                 <a
-                  href="tel:+15125550100"
+                  href="tel:+17372912767"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  (512) 555-0100
+                  (737) 291-2767
                 </a>
               </li>
               <li>Austin, Texas</li>

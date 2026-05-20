@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const contactInfo = [
-  { label: "Phone", value: "(512) 555-0100", href: "tel:+15125550100" },
+  { label: "Phone", value: "(737) 291-2767", href: "tel:+17372912767" },
   { label: "Location", value: "Austin, Texas", href: null },
   { label: "Also Serving", value: "San Antonio, TX", href: null },
   { label: "Hours", value: "Available 24/7", href: null },
@@ -103,10 +103,10 @@ export default function ContactPage() {
                   Prefer to call?
                 </p>
                 <a
-                  href="tel:+15125550100"
+                  href="tel:+17372912767"
                   className="text-brand-black font-bold text-xl hover:underline"
                 >
-                  (512) 555-0100
+                  (737) 291-2767
                 </a>
                 <p className="text-brand-black/70 text-xs mt-2 uppercase tracking-wide">
                   Available 24/7

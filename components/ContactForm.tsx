@@ -14,7 +14,7 @@ export default function ContactForm() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/YOUR_EMAIL_HERE", {
+      const res = await fetch("https://formsubmit.co/ajax/Jbarrientos@trafalgarlawtx.com", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: data,
@@ -72,7 +72,7 @@ export default function ContactForm() {
             name="phone"
             required
             className="w-full bg-brand-charcoal border border-brand-cream/20 text-brand-cream px-4 py-3 text-sm focus:outline-none focus:border-brand-gold transition-colors"
-            placeholder="(512) 555-0100"
+            placeholder="(737) 291-2767"
           />
         </div>
         <div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
       )}
       {state === "error" && (
         <p className="text-red-400 text-sm text-center">
-          Something went wrong. Please call us directly at (512) 555-0100.
+          Something went wrong. Please call us directly at (737) 291-2767.
         </p>
       )}
 

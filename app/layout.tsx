@@ -63,7 +63,7 @@ const schemaOrg = {
   description:
     "Personal injury law firm serving Austin and San Antonio, Texas. Car accidents, slip and fall, commercial accidents, pedestrian accidents, and wrongful death.",
   url: "https://trafalgarlawtx.com",
-  telephone: "+15125550100",
+  telephone: "+17372912767",
   priceRange: "No fee unless we win",
   address: {
     "@type": "PostalAddress",
