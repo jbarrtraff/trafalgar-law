@@ -19,16 +19,19 @@ export const metadata: Metadata = {
 export default function AustinPage() {
   return (
     <>
-      {/* Hero with aerial photo */}
+      {/* Hero with drone video */}
       <section className="relative bg-brand-black border-b border-brand-cream/10 py-32 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/austin-aerial.jpg"
-            alt="Aerial view of Austin Texas"
-            fill
-            className="object-cover object-center opacity-30"
-            priority
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/austin-360bridge.jpg"
+            className="absolute inset-0 w-full h-full object-cover opacity-35"
+          >
+            <source src="/videos/austin-bridge.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/60" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +67,7 @@ export default function AustinPage() {
                 src="/images/austin-skyline.jpg"
                 alt="Austin Texas skyline along Lady Bird Lake"
                 fill
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="object-cover object-center animate-kenburns"
               />
               <div className="absolute inset-0 bg-brand-black/20" />
               <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">
@@ -76,7 +79,7 @@ export default function AustinPage() {
                 src="/images/austin-aerial.jpg"
                 alt="Drone aerial view of Austin Texas"
                 fill
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="object-cover object-center animate-kenburns [animation-delay:7s]"
               />
               <div className="absolute inset-0 bg-brand-black/20" />
               <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">
@@ -88,7 +91,7 @@ export default function AustinPage() {
                 src="/images/austin-360bridge.jpg"
                 alt="360 Bridge over Lake Austin"
                 fill
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="object-cover object-center animate-kenburns [animation-delay:14s]"
               />
               <div className="absolute inset-0 bg-brand-black/20" />
               <span className="absolute bottom-4 left-4 text-brand-cream/80 text-xs uppercase tracking-widest">

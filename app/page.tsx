@@ -38,38 +38,64 @@ const whyUs = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center bg-brand-black overflow-hidden">
-        {/* Aerial Austin background */}
+      {/* Hero — drone video background */}
+      <section className="relative min-h-screen flex items-center bg-brand-black overflow-hidden">
+
+        {/* Video layer */}
         <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/austin-aerial.jpg"
-            alt="Aerial view of Austin, Texas"
-            fill
-            className="object-cover object-center opacity-25"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/50" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/austin-aerial.jpg"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          >
+            <source src="/videos/austin-skyline.mp4" type="video/mp4" />
+          </video>
+          {/* Gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black/95 via-brand-black/75 to-brand-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/30" />
         </div>
+
+        {/* Gold left accent */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-gold hidden lg:block" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40 w-full">
           <div className="max-w-3xl">
-            <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-6">
+
+            {/* Logo — prominent in hero */}
+            <div className="animate-fade-up mb-10">
+              <Image
+                src="/images/logo-white.png"
+                alt="Trafalgar Law Personal Injury"
+                width={280}
+                height={85}
+                className="h-20 w-auto object-contain"
+                priority
+              />
+              <div className="w-24 h-px bg-brand-gold mt-5" />
+            </div>
+
+            <p className="animate-fade-up-delay-1 text-brand-gold text-xs uppercase tracking-[0.3em] mb-5">
               Austin & San Antonio Personal Injury Attorney
             </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-brand-cream leading-tight mb-8">
+
+            <h1 className="animate-fade-up-delay-2 text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-brand-cream leading-tight mb-8">
               Injured?
               <br />
               <span className="text-brand-gold">We Fight</span>
               <br />
               For You.
             </h1>
-            <p className="text-brand-cream/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+
+            <p className="animate-fade-up-delay-3 text-brand-cream/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
               Trafalgar Law is a personal injury firm serving Austin and San
               Antonio, Texas. Car accidents, slip and fall, wrongful death —
               we take on the insurance companies so you can focus on healing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            <div className="animate-fade-up-delay-4 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
                 className="bg-brand-gold hover:bg-brand-gold-light text-brand-black font-bold text-sm px-10 py-4 uppercase tracking-widest text-center transition-colors duration-200"
@@ -78,15 +104,28 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/practice-areas"
-                className="border border-brand-cream/30 hover:border-brand-gold text-brand-cream hover:text-brand-gold text-sm px-10 py-4 uppercase tracking-widest text-center transition-colors duration-200"
+                className="border border-brand-cream/40 hover:border-brand-gold text-brand-cream hover:text-brand-gold text-sm px-10 py-4 uppercase tracking-widest text-center transition-colors duration-200"
               >
                 Our Practice Areas
               </Link>
+              <a
+                href="tel:+17372912767"
+                className="border border-brand-gold/60 hover:bg-brand-gold hover:text-brand-black text-brand-gold text-sm px-10 py-4 uppercase tracking-widest text-center transition-colors duration-200"
+              >
+                (737) 291-2767
+              </a>
             </div>
-            <p className="text-brand-gray text-sm mt-6 italic">
+
+            <p className="animate-fade-up-delay-4 text-brand-gray text-sm mt-6 italic">
               No fee unless we win. Confidential and free.
             </p>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+          <span className="text-brand-cream text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-px h-10 bg-brand-cream animate-pulse" />
         </div>
       </section>
 

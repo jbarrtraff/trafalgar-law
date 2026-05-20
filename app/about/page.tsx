@@ -27,8 +27,30 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-charcoal border-b border-brand-cream/10 py-24">
+      <section className="relative bg-brand-black border-b border-brand-cream/10 py-32 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/austin-skyline.jpg"
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+          >
+            <source src="/videos/austin-sunset.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/70" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <Image
+              src="/images/logo-white.png"
+              alt="Trafalgar Law"
+              width={200}
+              height={60}
+              className="h-16 w-auto object-contain"
+            />
+          </div>
           <p className="text-brand-gold text-xs uppercase tracking-[0.3em] mb-4">
             About Us
           </p>
