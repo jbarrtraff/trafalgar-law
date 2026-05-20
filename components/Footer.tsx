@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { practiceAreas } from "@/lib/practice-areas";
 
 export default function Footer() {
@@ -9,12 +10,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <p className="text-brand-cream text-xl font-serif font-bold tracking-widest uppercase">
-                Trafalgar Law
-              </p>
-              <p className="text-brand-gold text-xs tracking-[0.25em] uppercase mt-0.5">
-                Personal Injury
-              </p>
+              <Image
+                src="/images/logo-white.png"
+                alt="Trafalgar Law Personal Injury"
+                width={180}
+                height={55}
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <p className="text-brand-gray text-sm leading-relaxed italic">
               Committed. Relentless. Strategic.
